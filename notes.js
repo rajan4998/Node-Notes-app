@@ -54,10 +54,6 @@ const removeNote = function(title){
     saveNotes(selectedNote)
 }
 
-const findNote = function(title){
-    console.log('search for note from the file')
-}
-
 module.exports = {
     getNotes : getNotes,
     addNote : addNote,
