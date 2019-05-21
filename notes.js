@@ -42,8 +42,25 @@ const loadNotes = function(){
     }
 }
 
+const removeNote = function(title){
+    const notes = loadNotes()
+
+    const selectedNote = notes.filter(function(note){
+        if (note.title!=title){
+            return note;
+        }
+    })
+
+    saveNotes(selectedNote)
+}
+
+const findNote = function(title){
+    console.log('search for note from the file')
+}
+
 module.exports = {
     getNotes : getNotes,
     addNote : addNote,
-    loadNotes : loadNotes
+    loadNotes: loadNotes,
+    removeNote: removeNote
 };
