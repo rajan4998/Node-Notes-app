@@ -47,7 +47,7 @@ const removeNote = function(title){
 
     const selectedNote = notes.filter(function(note){
         if (note.title!=title){
-            return note;
+            return true;
         }
     })
 
