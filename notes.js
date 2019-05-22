@@ -52,9 +52,18 @@ const removeNote = (title) => {
     saveNotes(selectedNote)
 }
 
+const listNotes = ()=>{
+    const notes = loadNotes()
+
+    notes.forEach((note)=>{
+        console.log(note.title)
+    })
+}
+
 module.exports = {
     getNotes : getNotes,
     addNote : addNote,
     loadNotes: loadNotes,
-    removeNote: removeNote
+    removeNote: removeNote,
+    listNotes: listNotes
 };

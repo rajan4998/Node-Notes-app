@@ -54,9 +54,13 @@ yargs.command({
     command : 'read',
     describe : 'This brings a particular Note to read',
     handler  : function(argv){
+        notes.listNotes()
         // console.log("Read a Note")
     }
 })
 
+// yargs.command({
+//     command : ''
+// })
 // console.log(yargs.argv)
 yargs.parse()
