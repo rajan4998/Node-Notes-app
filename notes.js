@@ -2,16 +2,14 @@ const fs = require('fs');
 
 const fileName = 'notes.json';
 
-const getNotes = function(){
-    return 'Your notes : ';
-}
+const getNotes = () => {
+    console.log( 'Your notes : ');
+} 
 
-const addNote = function(title,body){
+const addNote = (title,body) => {
     const notes = loadNotes()
 
-    const duplicateNotes = notes.filter(function(note){
-        return note.title===title;
-    })
+    const duplicateNotes = notes.filter((note) => note.title===title );
 
     if(duplicateNotes.length==0){
         notes.push({
@@ -26,12 +24,12 @@ const addNote = function(title,body){
     }
 }
 
-const saveNotes = function(notes){
+const saveNotes = (notes)=>{
     const jsonNotes = JSON.stringify(notes);
     fs.writeFileSync(fileName, jsonNotes)
 }
 
-const loadNotes = function(){
+const loadNotes = () =>{
 
     try {
         const notes = fs.readFileSync(fileName, 'UTF-8');
@@ -42,10 +40,10 @@ const loadNotes = function(){
     }
 }
 
-const removeNote = function(title){
+const removeNote = (title) => {
     const notes = loadNotes()
 
-    const selectedNote = notes.filter(function(note){
+    const selectedNote = notes.filter((note)=>{
         if (note.title!=title){
             return true;
         }
