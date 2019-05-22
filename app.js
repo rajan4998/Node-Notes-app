@@ -49,7 +49,7 @@ yargs.command({
     }
 })
 
-//create a read command
+//create a read title command
 yargs.command({
     command : 'read-title',
     describe : 'This brings a title for all the Notes to read',
@@ -58,6 +58,7 @@ yargs.command({
     }
 })
 
+//create a read command
 yargs.command({
     command : 'read',
     describe: 'This brings a particular Note to read',

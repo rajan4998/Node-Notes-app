@@ -2,10 +2,6 @@ const fs = require('fs');
 
 const fileName = 'notes.json';
 
-const getNotes = () => {
-    console.log( 'Your notes : ');
-} 
-
 const addNote = (title,body) => {
     const notes = loadNotes()
 
@@ -81,7 +77,6 @@ const listNotes = ()=>{
 }
 
 module.exports = {
-    getNotes : getNotes,
     addNote : addNote,
     loadNotes: loadNotes,
     removeNote: removeNote,
