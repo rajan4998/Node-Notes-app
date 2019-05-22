@@ -9,9 +9,11 @@ const getNotes = () => {
 const addNote = (title,body) => {
     const notes = loadNotes()
 
-    const duplicateNotes = notes.filter((note) => note.title===title );
+    // const duplicateNotes = notes.filter((note) => note.title===title );
+    const duplicateNote = notes.find((note) => note.title===title)
 
-    if(duplicateNotes.length==0){
+    // if(duplicateNotes.length==0){
+    if (!duplicateNote){
         notes.push({
             title: title,
             body: body
@@ -22,6 +24,24 @@ const addNote = (title,body) => {
     }else{
         console.log('A Note with same title exists!')
     }
+}
+
+const searchNote = (title) => {
+    const notes = loadNotes()
+    const resultNote = notes.find((note)=>{
+        if(note.title===title){
+            return note;
+            // console.log(note)
+        }
+    })
+    
+    if (resultNote){
+        console.log(resultNote)
+    }
+    else{
+        console.log('No Note found with the title : '+title)
+    }
+    // console.log(resultNote)
 }
 
 const saveNotes = (notes)=>{
@@ -65,5 +85,6 @@ module.exports = {
     addNote : addNote,
     loadNotes: loadNotes,
     removeNote: removeNote,
-    listNotes: listNotes
+    listNotes: listNotes,
+    searchNote: searchNote
 };
