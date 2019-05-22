@@ -61,6 +61,13 @@ yargs.command({
 yargs.command({
     command : 'read',
     describe: 'This brings a particular Note to read',
+    builder : {
+        title : {
+            describe : 'Title is the search key',
+            demandOption : true,
+            type : 'string'
+        }
+    },
     handler : function(argv){
         notes.searchNote(argv.title)
     }
